@@ -14,21 +14,21 @@
 
     <!--*************************************Navbar*************************************-->
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
-      <a class="navbar-brand mb-0 h1" href="#">Navbar</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;position: fixed; width:100vw; z-index: 1;">
+      <a class="navbar-brand mb-0 h1" href="#">COVID-19 Donation</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav" style="float: right;overflow: hidden;margin-left: auto;">
-          <li class="nav-item active" style="margin: 0 3px;font-size: 20px;">
+          <li class="nav-item" style="margin: 0 3px;font-size: 20px;">
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item" style="margin: 0 3px;font-size: 20px;">
-            <a class="nav-link" href="#about">About Us</a>
+            <a class="nav-link" href="#aboutus">About Us</a>
           </li>
           <li class="nav-item" style="margin: 0 3px;font-size: 20px;">
-            <a class="nav-link" href="#Donate">Donate</a>
+            <a class="nav-link" href="#Donateus">Donate</a>
           </li>
           <li class="nav-item" style="margin: 0 3px;font-size: 20px;">
             <a class="nav-link" href="#contact">Contact Us</a>
@@ -41,7 +41,7 @@
 
     <!--*************************************Carousel*************************************-->
 
-    <div id="carouselCaptions" class="carousel slide" style="height: 91vh;" data-ride="carousel">
+    <div id="carouselCaptions" class="carousel slide" style="height: 95vh; z-index: -1;top: 6vh;" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselCaptions" data-slide-to="0" class="active"></li>
           <li data-target="#carouselCaptions" data-slide-to="1"></li>
@@ -49,21 +49,21 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active" data-interval="3000">
-            <img src="./Unite to fight.jpg" class="d-block w-100" style="height: 91vh;">
+            <img src="./Unite to fight.jpg" class="d-block w-100" style="height: 95vh;">
             <div class="carousel-caption d-block">
               <h2>Fight against COVID19</h2>
               <p>We can beat it together.</p>
             </div>
           </div>
           <div class="carousel-item" data-interval="3000">
-            <img src="./Feed the needy.jpg" class="d-block w-100" style="height: 91vh;">
+            <img src="./Feed the needy.jpg" class="d-block w-100" style="height: 95vh;">
             <div class="carousel-caption d-block">
               <h1>Feed the Needy</h1>
               <p>Feed the poor and get rich or feed the rich and get poor.</p>
             </div>
           </div>
           <div class="carousel-item" data-interval="3000">
-            <img src="./Donate for a novel cause.jpg" class="d-block w-100" style="height: 91vh;">
+            <img src="./Donate for a novel cause.jpg" class="d-block w-100" style="height: 95vh;">
             <div class="carousel-caption d-block">
               <h2>Donate For a Nobel Cause</h2>
               <p>The measure of a life, after all is not its duration, but its donation.</p>
@@ -84,16 +84,17 @@
 
     <!--*************************************About Us*************************************-->
 
-    <div class="container" id="about" style="height: 90vh;">
+    <div id="aboutus"></div>
+    <div class="container" id="about" style="height: 90vh; ">
       <header class="mt-5"><h1>About Us</h1></header>
       <div class="row">
         <div class="col-12 col-md-6">
-          <img src="./About.jpg" class="w-75" style="margin-top: 20%;">
+          <img src="./About.jpg" class="w-75" style="margin-top: 20%; position: relative; z-index: -1;">
         </div>
         <div class="col-12 col-md-6" style="margin-top: 15%;font-size: larger;">
-          <p>In these difficult times we are trying to feed some poor people and give them some emergency medicine. 
+          <p>In these difficult times we are trying to feed some poor people and give them emergency aid. 
             We need some help in this endeavor, so if anyone is willing to help, they can. 
-            We will go to your house and take your help.</p>
+            Just notify us and we will reach out to you.</p>
         </div>
       </div>
     </div>
@@ -101,11 +102,12 @@
     <!--***********************************************************************************-->
 
     <!--*************************************Donate*************************************-->
-
-    <div class="container" id="Donate" style="margin-top: 50px;">
+    
+    <div id="Donateus"></div>
+    <div class="container" id="Donate" style="margin-top: 50px;position: relative; z-index: 0;">
       <header><h1>Donate</h1></header>
         <div class="row">
-            <div class="col-12 col-md-5 mx-auto" style="margin-top: 50px;">
+            <div class="col-12 col-md-5 mx-auto" style="margin-top: 50px; position: relative;z-index: 0;">
                 <div class="card" style="opacity: 0;">
                     <img src="./Food-donations.jpg" class="card-img-top">
                     <div class="card-body">
@@ -115,7 +117,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-5 mx-auto" style="margin-top: 50px;">
+            <div class="col-12 col-md-5 mx-auto" style="margin-top: 50px; position: relative;z-index: 0;">
                 <div class="card" style="opacity: 0;">
                     <img src="./Donate-medical.jpg" class="card-img-top">
                     <div class="card-body">
@@ -125,7 +127,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-5 mx-auto" style="margin-top: 50px;">
+            <div class="col-12 col-md-5 mx-auto" style="margin-top: 50px; position: relative;z-index: 0;">
                 <div class="card" style="opacity: 0;">
                     <img src="./Donate Food-packets.jpg" class="card-img-top">
                     <div class="card-body">
@@ -135,7 +137,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-5 mx-auto" style="margin-top: 50px;">
+            <div class="col-12 col-md-5 mx-auto" style="margin-top: 50px; position: relative;z-index: 0;">
                 <div class="card" style="opacity: 0;">
                     <img src="./Donate clothes.jpg" class="card-img-top">
                     <div class="card-body">
@@ -145,7 +147,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-5 ml-md-5" style="margin-top: 50px;">
+            <div class="col-12 col-md-5 ml-md-5" style="margin-top: 50px; position: relative;z-index: 0;">
                 <div class="card" style="opacity: 0;">
                     <img src="./Donate-book.jpg" class="card-img-top">
                     <div class="card-body">
@@ -171,26 +173,34 @@
             </button>
           </div>
           <div class="modal-body">
-            <form>
+            <form action="/donate_request" method="POST">
+              <div class="form-group" style="display: none;">
+                <label for="InputName2">subject</label>
+                <input type="text" class="form-control" id="InputName2" name="subject" placeholder="subject">
+              </div>
               <div class="form-group">
                 <label for="InputName1">Name</label>
                 <input type="text" class="form-control" id="InputName1" name="name" placeholder="Name" required>
               </div>
               <div class="form-group">
                 <label for="InputMobile1">Mobile No.</label>
-                <input type="mobile" class="form-control" id="InputMobile1" aria-describedby="mobileHelp" pattern="[0-9]{10}" placeholder="0123456789" required>
+                <input type="mobile" class="form-control" id="InputMobile1" name="mobileno" aria-describedby="mobileHelp" pattern="[0-9]{10}" placeholder="0123456789" required>
                 <small id="mobileHelp" class="form-text text-muted">We'll never share your mobile no. with anyone else.</small>
               </div>
               <div class="form-group">
                 <label for="InputEmail1">Email address</label>
-                <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" placeholder="example@gmail.com" required>
+                <input type="email" class="form-control" id="InputEmail1" name="emailadd" aria-describedby="emailHelp" placeholder="example@gmail.com" required>
                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
               </div>
               <div class="form-group">
                 <label for="InputAddress1">Address</label>
-                <textarea type="text" class="form-control" id="InputAddress1" placeholder="address" style="resize: none;" required></textarea>
+                <textarea type="text" class="form-control" id="InputAddress1" name="addressin" placeholder="address" style="resize: none;" required></textarea>
               </div>
-              <button type="submit" class="btn btn-primary">Send</button>
+              <div class="form-group">
+                <label for="formGroupExampleInput">Quantity(approx.)</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="quantityapprox" placeholder="100" required>
+              </div>
+              <button type="submit" id="donation_done" class="btn btn-primary">Send</button>
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </form>
           </div>
@@ -211,38 +221,37 @@
               Ward no. 08, Post - Simhat<br />
               PS - Haringhata, Nadia - 741249<br />
               West Bengal, India<br />
-              <i class="fa fa-phone"></i>: +91 81234 56789<br />
-              <i class="fa fa-whatsapp"></i>: +91 87654 32198<br />
-              <i class="fa fa-envelope"></i>: <a href="mailto:example@gmail.com">example@gmail.com</a>
+              <i class="fa fa-phone"></i>: +91 94263 75332<br />
+              <i class="fa fa-envelope"></i>: <a href="mailto:shareforindiahelpinghands@gmail.com">shareforindiahelpinghands@gmail.com</a>
             </address>
             <div class="col-12 col-md-11 mt-5">
               <div class="btn-group" role="group">
-                  <a href="#" role="button" class="btn btn-primary" href="tel:+85212345678"><i class="fa fa-phone"></i> Call</a>
-                  <a href="#" role="button" class="btn btn-success"><i class="fa fa-whatsapp" aria-hidden="true"></i> Whatsapp</a>
-                  <a href="#" role="button" class="btn btn-danger" href="mailto:confusion@food.net"><i class="fa fa-envelope-o"></i> Email</a>
+                  <a  href="tel:+919426375332" role="button" class="btn btn-primary"><i class="fa fa-phone"></i> Call</a>
+                  <a href="https://chat.whatsapp.com/BWsTPAsE9bY5ntAFfPqH3J" target="_blank" role="button" class="btn btn-success"><i class="fa fa-whatsapp" aria-hidden="true"></i> Whatsapp</a>
+                  <a href="mailto:shareforindiahelpinghands@gmail.com" role="button" class="btn btn-danger"><i class="fa fa-envelope-o"></i> Email</a>
               </div>
             </div>
           </div>
           <div class="col-10 mx-auto col-md-5 mt-4" style="border-radius: 15px;box-shadow: 0 10px 50px rgba(189, 181, 171, 0.979);">
             <h3 class="mt-3">Send Feedback</h3>
-            <form class="offset-md-1 mt-5">
+            <form class="offset-md-1 mt-5" action="/contactus" method="POST">
               <div class="form-group">
                 <label for="exampleInputName2">Name</label>
                 <input type="text" class="form-control" id="exampleInputName2" name="name" placeholder="Name" required>
               </div>
               <div class="form-group">
                 <label for="exampleInputMobile2">Mobile No.</label>
-                <input type="tel" class="form-control" id="exampleInputMobile2"  pattern="[0-9]{10}" placeholder="0123456789" required>
+                <input type="tel" class="form-control" id="exampleInputMobile2" name="mobile" pattern="[0-9]{10}" placeholder="0123456789" required>
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail2">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail2" placeholder="example@gmail.com" required>
+                <input type="email" class="form-control" id="exampleInputEmail2" name="email" placeholder="example@gmail.com" required>
               </div>
               <div class="form-group">
                 <label for="exampleInputAddress2">Message</label>
-                <textarea type="text" class="form-control" id="exampleInputAddress2" placeholder="message" style="resize: none;" required></textarea>
+                <textarea type="text" class="form-control" id="exampleInputAddress2" name="msg" placeholder="message" style="resize: none;" required></textarea>
               </div>
-              <button type="submit" class="btn btn-primary mb-3">Send</button>
+              <button type="submit" id="team_contact" class="btn btn-primary mb-3">Send</button>
             </form>
           </div>
       </div>
@@ -257,10 +266,10 @@
         <div class="row justify-content-center">
           <div class="col-4 offset-1 col-sm-2 mt-3">
             <h5>Links</h5>
-            <ul class="list-unstyled">
+            <ul class="footer_links list-unstyled">
               <li><a href="#">Home</a></li>
-              <li><a href="#about">About Us</a></li>
-              <li><a href="#Donate">Donate</a></li>
+              <li><a href="#aboutus">About Us</a></li>
+              <li><a href="#Donateus">Donate</a></li>
               <li><a href="#contact">Contact Us</a></li>
             </ul>
           </div>
@@ -270,9 +279,8 @@
               Ward no. 08, Post - Simhat<br />
               PS - Haringhata, Nadia - 741249<br />
               West Bengal, India<br />
-              <i class="fa fa-phone"></i>: +91 81234 56789<br />
-              <i class="fa fa-whatsapp"></i>: +91 87654 32198<br />
-              <i class="fa fa-envelope"></i>: <a href="mailto:example@gmail.com">example@gmail.com</a>
+              <i class="fa fa-phone"></i>: +91 94263 75332<br />
+              <i class="fa fa-envelope"></i>: <a href="mailto:shareforindiahelpinghands@gmail.com">shareforindiahelpinghands@gmail.com</a>
             </address>
           </div>
           <div class="col-12 col-sm-4 align-self-center">
