@@ -70,10 +70,10 @@ app.post('/contactus',(req,res)=>{
     let msg= req.body.msg;
 
     let mailOptions = {
-      from: ouremail,
-      to: ouremail,
-      subject: 'Contact US',
-      text: `Name: ${name}\nMobile: ${mobile}\nEmail: ${email}\nMessage: ${msg}`
+        from: ouremail,
+        to: ouremail,
+        subject: 'Contact US',
+        text: `Name: ${name}\nMobile: ${mobile}\nEmail: ${email}\nMessage: ${msg}`
     };
 
     let mailOptions2 = {
@@ -100,7 +100,6 @@ app.post('/contactus',(req,res)=>{
     });
 
     res.redirect('back');
-  
 })
 
 app.listen(port,()=>{console.log('Server listening')});

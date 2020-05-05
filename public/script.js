@@ -41,11 +41,11 @@ $(document).ready(function(){
       })
 });
 
-$('#donation_done').click(function(){
+$('.donate_form form').submit(function(){
     alert('Donation successfull recorded. Our team will soon reach you. Please check your email.');
 })
 
-$('#team_contact').click(function(){
+$('.contact_form').submit(function(){
     alert('Our team has been informed. Please check your email');
 })
 
