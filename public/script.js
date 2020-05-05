@@ -42,7 +42,7 @@ $(document).ready(function(){
 });
 
 $('#donation_done').click(function(){
-    alert('Donation successfull recorded. Please check your email.');
+    alert('Donation successfull recorded. Our team will soon reach you. Please check your email.');
 })
 
 $('#team_contact').click(function(){
