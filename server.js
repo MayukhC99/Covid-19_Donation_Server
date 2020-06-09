@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 let ouremail= 'shareforindiahelpinghands@gmail.com';
-let ourpassword= 'covidrelief'
+let ourpassword= 'avsharshe1234'
 
 let transporter = nodemailer.createTransport({
     service: 'gmail',
