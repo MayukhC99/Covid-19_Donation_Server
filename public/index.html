@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="./bootstrap-social/bootstrap-social.css">
+    <link rel="stylesheet" href="./style.css">
     <title>COVID-19 Donation</title>
 </head>
 <body>
@@ -85,7 +86,7 @@
     <!--*************************************About Us*************************************-->
 
     <div id="aboutus"></div>
-    <div class="container" id="about" style="height: calc(100vh - 60px);margin-top: 60px; ">
+    <div class="container about" id="about" style="height: calc(100vh - 60px);margin-top: 60px; ">
       <header class="mt-5"><h1>About Us</h1></header>
       <div class="row">
         <div class="col-12 col-md-6">
@@ -104,7 +105,7 @@
     <!--*************************************Donate*************************************-->
     
     <div id="Donateus"></div>
-    <div class="container" id="Donate" style="margin-top: 60px;position: relative; z-index: 0;">
+    <div class="container donate" id="Donate" style="margin-top: 60px;position: relative; z-index: 0;">
       <header><h1>Donate</h1></header>
         <div class="row">
             <div class="col-12 col-md-5 mx-auto" style="margin-top: 50px; position: relative;z-index: 0;">
@@ -147,7 +148,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-5 ml-md-5" style="margin-top: 50px; position: relative;z-index: 0;">
+            <div class="col-12 col-md-5 mx-auto" style="margin-top: 50px; position: relative;z-index: 0;">
                 <div class="card" style="opacity: 0;">
                     <img src="./Img/Donate-book.jpg" class="card-img-top">
                     <div class="card-body">
@@ -157,6 +158,21 @@
                     </div>
                 </div>
             </div>
+            <div class="col-12 col-md-5 mx-auto" style="margin-top: 50px; position: relative;z-index: 0;">
+              <div class="card" style="opacity: 0;">
+                  <div class="card-img-top multiple_img">
+                    <img src="./Img/Food-donations.jpg" width="" height="">
+                    <img src="./Img/Donate-medical.jpg" width="" height="">
+                    <img src="./Img/Donate clothes.jpg" width="" height="">
+                    <img src="./Img/Donate-book.jpg" width="" height="">
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Miscellaneous</h5>
+                    <p class="card-text">You can give multiple donations. It will help the needy people enormously. Your will gladly accept your donation. </p>
+                    <button type="button" class="btn btn-primary btn6" data-toggle="modal" data-target="#staticBackdrop">Donate</button>
+                  </div>
+              </div>
+          </div>
         </div>
     </div>
 
@@ -173,6 +189,18 @@
             </button>
           </div>
           <div class="modal-body donate_form">
+            <div class="multiple_donations" style="display: none;">
+              <div class="row">
+                <div class="col-12 mx-auto col-sm-6"><a class="trigger ml-sm-4 mx-auto text-white">Donate Groceries<i class="fa fa-plus ml-2"></i></a></div>
+                <div class="col-12 mx-auto col-sm-6"><a class="trigger ml-sm-4 mx-auto text-white">Donate Medical<i class="fa fa-plus ml-2"></i></a></div>
+                <div class="col-12 mx-auto col-sm-6"><a class="trigger ml-sm-4 mx-auto text-white">Donate Food Packets<i class="fa fa-plus ml-2"></i></a></div>
+                <div class="col-12 mx-auto col-sm-6"><a class="trigger ml-sm-4 mx-auto text-white">Donate Clothes<i class="fa fa-plus ml-2"></i></a></div>
+                <div class="col-12 mx-auto col-sm-6"><a class="trigger ml-sm-4 mx-auto text-white">Donate Books<i class="fa fa-plus ml-2"></i></a></div>
+                <div class="col-12 mx-auto text text-danger font-weight-bold"></div>
+              </div>
+              <button type="submit" id="donate_multiple" class="btn btn-primary mt-5">Donate</button>
+              <button type="button" class="btn btn-secondary mt-5" data-dismiss="modal">Close</button>
+            </div>
             <form action="/donate_request" method="POST">
               <div class="form-group" style="display: none;">
                 <label for="InputName2">subject</label>
@@ -196,10 +224,6 @@
                 <label for="InputAddress1">Address</label>
                 <textarea type="text" class="form-control" id="InputAddress1" name="addressin" placeholder="address" style="resize: none;" required></textarea>
               </div>
-              <div class="form-group">
-                <label for="formGroupExampleInput">Quantity(approx.)</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" name="quantityapprox" placeholder="100" required>
-              </div>
               <button type="submit" id="donation_done" class="btn btn-primary">Send</button>
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </form>
@@ -215,7 +239,7 @@
     <div class="container" id="contact" style="border-top: solid white;">
       <header style="margin-top: 60px;"><h1>Contact Us</h1></header>
       <div class="row">
-        <div class="col-12 col-md-4 offset-md-1 mt-5">
+        <div class="col-12 col-md-6 offset-md-1 mt-5">
           <h3>Our Address</h3>
             <address class="offset-sm-1 mt-5">
               Ward no. 08, Post - Simhat<br />
@@ -224,9 +248,9 @@
               <i class="fa fa-phone"></i>: +91 94263 75332<br />
               <i class="fa fa-envelope"></i>: <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=CllgCHrhTVzBjHrvwvtNtRKPpLpHtnLtsmNMSZXzFsrSqXmqNjzLpdFWdvDstjbvmTxWTnGqrnq">shareforindiahelpinghands@gmail.com</a>
             </address>
-            <div class="col-12 col-md-11 mt-5">
+            <div class="col-12 col-md-12 mt-5">
               <div class="btn-group" role="group">
-                  <a  href="tel:+919426375332" role="button" class="btn btn-primary"><i class="fa fa-phone"></i> Call</a>
+                  <a  href="tel:+919426375332" role="button" class="btn btn-primary" style="width: fit-content;"><i class="fa fa-phone"></i> Call</a>
                   <a href="https://chat.whatsapp.com/BWsTPAsE9bY5ntAFfPqH3J" target="_blank" role="button" class="btn btn-success"><i class="fa fa-whatsapp" aria-hidden="true"></i> Whatsapp</a>
                   <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=CllgCHrhTVzBjHrvwvtNtRKPpLpHtnLtsmNMSZXzFsrSqXmqNjzLpdFWdvDstjbvmTxWTnGqrnq" role="button" class="btn btn-danger"><i class="fa fa-envelope-o"></i> Email</a>
               </div>
