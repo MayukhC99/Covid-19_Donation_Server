@@ -24,8 +24,15 @@ let transporter = nodemailer.createTransport({
 app.post('/donate_request',(req,res)=>{
     let sub= req.body.subject;
     let email= req.body.emailadd.trim();
-    let txt= `Name: ${req.body.name}\nMobile number: ${req.body.mobileno}\nEmail id: ${req.body.emailadd}\nAddress: ${req.body.addressin}\nQuantity(approx.): ${req.body.quantityapprox}`;
-    
+    let txt= `Name: ${req.body.name}\nMobile number: ${req.body.mobileno}\nEmail id: ${req.body.emailadd}\nAddress: ${req.body.addressin}`;
+    for(let i = 5; i < Object.keys(req.body).length; i++){
+      let quantity_name = Object.keys(req.body)[i];
+      let left = quantity_name.split("quantityapprox");
+      if(left[0] == "FoodPackets")
+        left[0] = "Food Packets";
+      let quantity = `\n${left[0]} Quantity(approx.): ${req.body[quantity_name]}`;
+      txt += quantity;
+    }
     console.log(sub);
     console.log(email);
     console.log(txt);

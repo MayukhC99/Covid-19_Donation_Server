@@ -1,0 +1,35 @@
+.multiple_donations .trigger {
+    padding: 1px 10px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 10px;
+    background-color: rgb(13, 170, 243);
+    transition: box-shadow 0.55s;
+    width: fit-content;
+    display: block;
+    box-shadow: 0;
+    cursor: pointer;
+}
+
+.multiple_donations div{
+    margin-top: 12px;
+}
+
+.multiple_donations .trigger:hover{
+    transition: box-shadow 0.45s;
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+    background-color: rgb(38, 131, 238);
+}
+
+.multiple_donations .add_donation{
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+    background-color: rgb(238, 38, 38);
+}
+
+.multiple_donations .add_donation:hover{
+    background-color: rgb(238, 38, 38);
+}
+
+.fa-rotate-45{
+    transform: rotate(-45deg);
+}
