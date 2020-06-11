@@ -33,3 +33,12 @@
 .fa-rotate-45{
     transform: rotate(-45deg);
 }
+
+@media(max-width: 329px){
+    #contact_email{
+        font-size: 15px;
+    }
+    #communication{
+        font-size: 15px;
+    }
+}

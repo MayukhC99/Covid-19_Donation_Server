@@ -161,7 +161,6 @@ $(document).ready(function(){
 
     let div_width = $(".multiple_img").width();
     let div_height = $(".card").height();
-    console.log(div_height);
     $(".multiple_img img").attr('width', `${(div_width/2) - 2.5}`);
     $(".multiple_img img:nth-child(2)").attr('width', `${(div_width/2) - 2}`);
     $(".multiple_img img:nth-child(4)").attr('width', `${(div_width/2) - 2}`);
