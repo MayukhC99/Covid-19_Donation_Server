@@ -70,50 +70,134 @@ $(document).ready(function(){
     var trace = new Set();
 
     $(".btn1").on('click', function(){
-        $(`<div class="form-group">
-            <label for="formGroupExampleInput">Quantity(approx.)</label>
-            <input type="text" class="form-control" id="formGroupExampleInput" name="quantityapprox" placeholder="100" required>
-        </div>`).insertAfter(".modal-body form div:nth-child(5)");
-        $(".modal-title").text("Donate Groceries");
-        $(".modal-body #InputName2").val('Grocery Donation')
+        $.get('/root/verify_user',function(response){
+            if(response=== 'success' || response=== 'admin'){
+                $.get('/root/get/user_details', (data)=>{
+                    $("#InputName1").val(data.first_name + ' ' + data.last_name);
+                    $("#InputMobile1").val(data.mobile_number);
+                    $("#InputEmail1").val(data.email_id);
+                    $("#InputAddress1").val(data.address);
+                })
+                $(`<div class="form-group">
+                    <label for="formGroupExampleInput">Quantity(approx.)</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" name="quantityapprox" placeholder="100" required>
+                </div>`).insertAfter(".modal-body form div:nth-child(5)");
+                $(".modal-title").text("Donate Groceries");
+                $(".modal-body #InputName2").val('Grocery Donation');
+                $(".modal").modal('show');
+            }
+            else{
+                alert("Login first to donate!");
+            }
+        })
     });
     $(".btn2").on('click', function(){
-        $(`<div class="form-group">
-            <label for="formGroupExampleInput">Quantity(approx.)</label>
-            <input type="text" class="form-control" id="formGroupExampleInput" name="quantityapprox" placeholder="100" required>
-        </div>`).insertAfter(".modal-body form div:nth-child(5)");
-        $(".modal-title").text("Donate Medical");
-        $(".modal-body #InputName2").val('Medical Donation')
+        $.get('/root/verify_user',function(response){
+            if(response=== 'success' || response=== 'admin'){
+                $.get('/root/get/user_details', (data)=>{
+                    $("#InputName1").val(data.first_name + ' ' + data.last_name);
+                    $("#InputMobile1").val(data.mobile_number);
+                    $("#InputEmail1").val(data.email_id);
+                    $("#InputAddress1").val(data.address);
+                })
+                $(`<div class="form-group">
+                    <label for="formGroupExampleInput">Quantity(approx.)</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" name="quantityapprox" placeholder="100" required>
+                </div>`).insertAfter(".modal-body form div:nth-child(5)");
+                $(".modal-title").text("Donate Medical");
+                $(".modal-body #InputName2").val('Medical Donation');
+                $(".modal").modal('show');
+            }
+            else{
+                alert("Login first to donate!");
+            }
+        })
     });
     $(".btn3").on('click', function(){
-        $(`<div class="form-group">
-            <label for="formGroupExampleInput">Quantity(approx.)</label>
-            <input type="text" class="form-control" id="formGroupExampleInput" name="quantityapprox" placeholder="100" required>
-        </div>`).insertAfter(".modal-body form div:nth-child(5)");
-        $(".modal-title").text("Donate Food Packets");
-        $(".modal-body #InputName2").val('Food Donation')
+        $.get('/root/verify_user',function(response){
+            if(response=== 'success' || response=== 'admin'){
+                $.get('/root/get/user_details', (data)=>{
+                    $("#InputName1").val(data.first_name + ' ' + data.last_name);
+                    $("#InputMobile1").val(data.mobile_number);
+                    $("#InputEmail1").val(data.email_id);
+                    $("#InputAddress1").val(data.address);
+                })
+                $(`<div class="form-group">
+                    <label for="formGroupExampleInput">Quantity(approx.)</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" name="quantityapprox" placeholder="100" required>
+                </div>`).insertAfter(".modal-body form div:nth-child(5)");
+                $(".modal-title").text("Donate Food Packets");
+                $(".modal-body #InputName2").val('Food Donation');
+                $(".modal").modal('show');
+            }
+            else{
+                alert("Login first to donate!");
+            }
+        })
     });
     $(".btn4").on('click', function(){
-        $(`<div class="form-group">
-            <label for="formGroupExampleInput">Quantity(approx.)</label>
-            <input type="text" class="form-control" id="formGroupExampleInput" name="quantityapprox" placeholder="100" required>
-        </div>`).insertAfter(".modal-body form div:nth-child(5)");
-        $(".modal-title").text("Donate Clothes");
-        $(".modal-body #InputName2").val('Cloth Donation')
+        $.get('/root/verify_user',function(response){
+            if(response=== 'success' || response=== 'admin'){
+                $.get('/root/get/user_details', (data)=>{
+                    $("#InputName1").val(data.first_name + ' ' + data.last_name);
+                    $("#InputMobile1").val(data.mobile_number);
+                    $("#InputEmail1").val(data.email_id);
+                    $("#InputAddress1").val(data.address);
+                })
+                $(`<div class="form-group">
+                    <label for="formGroupExampleInput">Quantity(approx.)</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" name="quantityapprox" placeholder="100" required>
+                </div>`).insertAfter(".modal-body form div:nth-child(5)");
+                $(".modal-title").text("Donate Clothes");
+                $(".modal-body #InputName2").val('Clothes Donation');
+                $(".modal").modal('show');
+            }
+            else{
+                alert("Login first to donate!");
+            }
+        })
     });
     $(".btn5").on('click', function(){
-        $(`<div class="form-group">
-            <label for="formGroupExampleInput">Quantity(approx.)</label>
-            <input type="text" class="form-control" id="formGroupExampleInput" name="quantityapprox" placeholder="100" required>
-        </div>`).insertAfter(".modal-body form div:nth-child(5)");
-        $(".modal-title").text("Donate Books");
-        $(".modal-body #InputName2").val('Book Donation')
+        $.get('/root/verify_user',function(response){
+            if(response=== 'success' || response=== 'admin'){
+                $.get('/root/get/user_details', (data)=>{
+                    $("#InputName1").val(data.first_name + ' ' + data.last_name);
+                    $("#InputMobile1").val(data.mobile_number);
+                    $("#InputEmail1").val(data.email_id);
+                    $("#InputAddress1").val(data.address);
+                })
+                $(`<div class="form-group">
+                    <label for="formGroupExampleInput">Quantity(approx.)</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" name="quantityapprox" placeholder="100" required>
+                </div>`).insertAfter(".modal-body form div:nth-child(5)");
+                $(".modal-title").text("Donate Books");
+                $(".modal-body #InputName2").val('Book Donation');
+                $(".modal").modal('show');
+            }
+            else{
+                alert("Login first to donate!");
+            }
+        })
     });
     $(".btn6").on('click', function(){
-        $(".modal-title").text("Miscellaneous");
-        $(".modal-body #InputName2").val('Multiple Donation')
-        $(".multiple_donations").show();
-        $(".modal-body form").hide();
+        $.get('/root/verify_user',function(response){
+            if(response=== 'success' || response=== 'admin'){
+                $.get('/root/get/user_details', (data)=>{
+                    $("#InputName1").val(data.first_name + ' ' + data.last_name);
+                    $("#InputMobile1").val(data.mobile_number);
+                    $("#InputEmail1").val(data.email_id);
+                    $("#InputAddress1").val(data.address);
+                })
+                $(".modal-title").text("Miscellaneous");
+                $(".modal-body #InputName2").val('Multiple Donation');
+                $(".multiple_donations").show();
+                $(".modal-body form").hide();
+                $(".modal").modal('show');
+            }
+            else{
+                alert("Login first to donate!");
+            }
+        })
     });
 
     $('.modal').on('hidden.bs.modal', function (e) {
@@ -125,6 +209,7 @@ $(document).ready(function(){
         trace.clear();
         $(".modal-body form .added").remove();
         $(".modal-body form div:nth-child(6)").remove();
+        $('.multiple_donations .text').text("");
     })
 
     $(document).on('click', '.multiple_donations div a', function(){
@@ -148,7 +233,7 @@ $(document).ready(function(){
                 var trimStr = donation_name.split(" ").join("");
                 $(`<div class="form-group added">
                     <label for="formGroupExampleInput">${donation_name} Quantity(approx.)</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" name="${trimStr}quantityapprox" placeholder="100" required>
+                    <input type="text" class="form-control" id="formGroupExampleInput${i+1}" name="${trimStr}quantityapprox" placeholder="100" required>
                 </div>`).insertAfter(".modal-body form div:nth-child(5)");
             }
             $(".multiple_donations").hide();
@@ -160,18 +245,18 @@ $(document).ready(function(){
     })
 
     let div_width = $(".multiple_img").width();
-    let div_height = $(".card").height();
+    console.log($(".book_img").height());
     $(".multiple_img img").attr('width', `${(div_width/2) - 2.5}`);
     $(".multiple_img img:nth-child(2)").attr('width', `${(div_width/2) - 2}`);
     $(".multiple_img img:nth-child(4)").attr('width', `${(div_width/2) - 2}`);
     if($(window).width() >= 1183)
-        $(".multiple_img img").attr('height', `${(div_height/3.2)}`);
+        $(".multiple_img img").attr('height', `${(475.734/3.2)}`);
     else if($(window).width() >= 975 && $(window).width() < 1200)
-        $(".multiple_img img").attr('height', `${(div_height/3.4)}`);
+        $(".multiple_img img").attr('height', `${(420.672/3.4)}`);
     else if($(window).width() >= 751 && $(window).width() < 992)
-        $(".multiple_img img").attr('height', `${(div_height/4.25)}`);
+        $(".multiple_img img").attr('height', `${(380.906/4.25)}`);
     else if($(window).width() < 751)
-        $(".multiple_img img").attr('height', `${(div_height/3.2)}`);
+        $(".multiple_img img").attr('height', `${(503.078/3.2)}`);
     $(window).bind('resize', function() {
         let div_width = $(".multiple_img").width();
         let div_height = $(".card").height();

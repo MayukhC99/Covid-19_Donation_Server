@@ -1,17 +1,16 @@
 const express= require('express');
-const path= require('path');
+const express_sessions = require('express-session');
+const passport= require('./passport').passport;
 const nodemailer= require('nodemailer');
+const path= require('path');
+const http= require('http');
 
 const app= express();
 let port= process.env.PORT || 3000 ;
-
-app.use(express.static(path.join(__dirname,'public')));
-
-app.use(express.json());
-app.use(express.urlencoded({extended: true}));
+const server= http.createServer(app);
 
 let ouremail= 'shareforindiahelpinghands@gmail.com';
-let ourpassword= 'covidrelief'
+let ourpassword= 'covidrelief';
 
 let transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -21,54 +20,22 @@ let transporter = nodemailer.createTransport({
     }
 });
 
-app.post('/donate_request',(req,res)=>{
-    let sub= req.body.subject;
-    let email= req.body.emailadd.trim();
-    let txt= `Name: ${req.body.name}\nMobile number: ${req.body.mobileno}\nEmail id: ${req.body.emailadd}\nAddress: ${req.body.addressin}`;
-    for(let i = 5; i < Object.keys(req.body).length; i++){
-      let quantity_name = Object.keys(req.body)[i];
-      let left = quantity_name.split("quantityapprox");
-      if(left[0] == "FoodPackets")
-        left[0] = "Food Packets";
-      let quantity = `\n${left[0]} Quantity(approx.): ${req.body[quantity_name]}`;
-      txt += quantity;
-    }
-    console.log(sub);
-    console.log(email);
-    console.log(txt);
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 
-    let mailOptions = {
-        from: ouremail,
-        to: ouremail,
-        subject: sub,
-        text: txt
-    };
+app.use(express_sessions({
+  secret: 'Covid19DonationServer'
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 
-    let mailOptions2 = {
-        from: ouremail,
-        to: email,
-        subject: "Thank you for "+ sub,
-        text: `We heartly thank you for your donation. Your donation records:\n${txt}\n\n#StayHome #StaySafe`
-    };
+app.use(express.static(path.join(__dirname,'public')));
+app.use('/donations',require('./route/donations').route);
+app.use('/signup',require('./route/signup').route);
+app.use('/login',require('./route/login').route);
+app.use('/root',require('./route/root').route);
 
-    transporter.sendMail(mailOptions, function(error, info){
-        if (error) {
-          console.log(error);
-        } else {
-          console.log('Email sent: ' + info.response);
-        }
-    });
 
-    transporter.sendMail(mailOptions2, function(error, info){
-        if (error) {
-          console.log(error);
-        } else {
-          console.log('Email sent: ' + info.response);
-        }
-    });
-
-    res.redirect('back');
-})
 
 app.post('/contactus',(req,res)=>{
     let name= req.body.name;
@@ -109,4 +76,10 @@ app.post('/contactus',(req,res)=>{
     res.redirect('back');
 })
 
-app.listen(port,()=>{console.log('Server listening')});
+
+
+server.listen(port,()=>{console.log('Server listening')});
+
+module.exports= {
+  app
+}
