@@ -1,0 +1,8 @@
+.all_requests .text{
+    display: inline-block;
+    white-space: pre-line;
+}
+
+.re:hover{
+    background-color: rgb(238, 238, 238);
+}

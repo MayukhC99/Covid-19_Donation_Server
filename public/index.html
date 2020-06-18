@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
     <link rel="stylesheet" href="./bootstrap-social/bootstrap-social.css">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./sidebar.css">
     <title>COVID-19 Donation</title>
 </head>
 <body>
@@ -83,6 +87,28 @@
 
     <!--***********************************************************************************-->
 
+    <!--*************************************Sidebar*************************************-->
+
+    <div class="side">
+      <input type="checkbox" id="checkSide">
+      <label for="checkSide">
+          <i class="fa fa-bars" id="btnSide"></i>
+          <i class="fa fa-times" id="cancelSide"></i>
+      </label>
+      <div class="sidebar">
+        <header>Dashboard</header>
+        <ul style="padding-left: 0;">
+          <li><a href="./login/login.html"><i class="fa fa-sign-in"></i>Login</a></li>
+          <li><a href="./login/signup.html"><i class="fa fa-user-plus"></i>Signup</a></li>
+          <li><a href="#Donateus"><i class="fas fa-hands"></i>Donate</a></li>
+          <li><a href="https://github.com/MayukhC99/En-linea-Banking/"><i class="fa fa-github"></i>Contribute</a></li>
+          <li><a href="#contact"><i class="fa fa-envelope"></i>Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!--***********************************************************************************-->
+
     <!--*************************************About Us*************************************-->
 
     <div id="aboutus"></div>
@@ -114,7 +140,7 @@
                     <div class="card-body">
                       <h5 class="card-title">Donate Groceries</h5>
                       <p class="card-text">If you can't feed a hundred people, then just<br />  feed one.</p>
-                      <button type="button" class="btn btn-primary btn1" data-toggle="modal" data-target="#staticBackdrop">Donate</button>
+                      <button type="button" class="btn btn-primary btn1" data-target="#staticBackdrop">Donate</button>
                     </div>
                 </div>
             </div>
@@ -124,7 +150,7 @@
                     <div class="card-body">
                       <h5 class="card-title">Donate Medical</h5>
                       <p class="card-text">Giving is not just making a donation. It is about making a difference.</p>
-                      <button type="button" class="btn btn-primary btn2" data-toggle="modal" data-target="#staticBackdrop">Donate</button>
+                      <button type="button" class="btn btn-primary btn2" data-target="#staticBackdrop">Donate</button>
                     </div>
                 </div>
             </div>
@@ -134,7 +160,7 @@
                     <div class="card-body">
                       <h5 class="card-title">Donate Food Packets</h5>
                       <p class="card-text">Some waste food to show that they are rich. Few donate food because they have  a rich heart.</p>
-                      <button type="button" class="btn btn-primary btn3" data-toggle="modal" data-target="#staticBackdrop">Donate</button>
+                      <button type="button" class="btn btn-primary btn3" data-target="#staticBackdrop">Donate</button>
                     </div>
                 </div>
             </div>
@@ -144,17 +170,17 @@
                     <div class="card-body">
                       <h5 class="card-title">Donate Clothes</h5>
                       <p class="card-text">Clear your wardrobe of anything you're not wearing and give the clothes to charity.</p>
-                      <button type="button" class="btn btn-primary btn4" data-toggle="modal" data-target="#staticBackdrop">Donate</button>
+                      <button type="button" class="btn btn-primary btn4" data-target="#staticBackdrop">Donate</button>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-md-5 mx-auto" style="margin-top: 50px; position: relative;z-index: 0;">
-                <div class="card" style="opacity: 0;">
+                <div class="card book_img" style="opacity: 0;">
                     <img src="./Img/Donate-book.jpg" class="card-img-top">
                     <div class="card-body">
                       <h5 class="card-title">Donate Books</h5>
                       <p class="card-text">When you have possessed a book with a mind and spirit, you are enriched. But when you pass it on you are enriched threefold.</p>
-                      <button type="button" class="btn btn-primary btn5" data-toggle="modal" data-target="#staticBackdrop">Donate</button>
+                      <button type="button" class="btn btn-primary btn5" data-target="#staticBackdrop">Donate</button>
                     </div>
                 </div>
             </div>
@@ -169,7 +195,7 @@
                   <div class="card-body">
                     <h5 class="card-title">Miscellaneous</h5>
                     <p class="card-text">You can give multiple donations . It will help the needy people enormously . We will gladly accept your donation. </p>
-                    <button type="button" class="btn btn-primary btn6" data-toggle="modal" data-target="#staticBackdrop">Donate</button>
+                    <button type="button" class="btn btn-primary btn6" data-target="#staticBackdrop">Donate</button>
                   </div>
               </div>
           </div>
@@ -201,7 +227,7 @@
               <button type="submit" id="donate_multiple" class="btn btn-primary mt-5">Donate</button>
               <button type="button" class="btn btn-secondary mt-5" data-dismiss="modal">Close</button>
             </div>
-            <form action="/donate_request" method="POST">
+            <form action="/donations/donate_request" method="POST">
               <div class="form-group" style="display: none;">
                 <label for="InputName2">subject</label>
                 <input type="text" class="form-control" id="InputName2" name="subject" placeholder="subject">
@@ -321,5 +347,6 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="./script.js"></script>
+    <script src="./dashboard.js"></script>
 </body>
 </html>
