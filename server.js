@@ -10,7 +10,7 @@ let port= process.env.PORT || 3000 ;
 const server= http.createServer(app);
 
 let ouremail= 'shareforindiahelpinghands@gmail.com';
-let ourpassword= 'covidrelief';
+let ourpassword= 'avsharshe1234'
 
 let transporter = nodemailer.createTransport({
     service: 'gmail',
