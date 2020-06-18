@@ -4,7 +4,7 @@ const Op = sequelize.Op;
 const db= new sequelize(
     'covid19',
     'root',
-    'sirsrt',
+    'admin',
     {
         dialect: 'mysql',
         host: 'localhost'
@@ -49,7 +49,7 @@ const donations= db.define('donations',{
 
 function admin_callback(){
     db.query(`INSERT IGNORE INTO users (username,password,first_name,last_name,email_id,mobile_number,profile_picture)` +
-            `VALUES ('admin','9073326812','Aanshuman','Sharma','shareforindiahelpinghands@gmail.com','9426375332','000.png')`);
+            `VALUES ('admin','9073326812','Aanshuman','Sharma','shareforindiahelpinghands@yahoo.com','9426375332','000.png')`);
 }
 
 db.sync().then(function(){

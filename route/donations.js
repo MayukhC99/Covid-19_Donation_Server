@@ -3,11 +3,14 @@ const donations= require('../database').donations;
 const nodemailer= require('nodemailer');
 const route= express.Router();
 
-let ouremail= 'shareforindiahelpinghands@gmail.com';
-let ourpassword= 'covidrelief';
+let ouremail= 'shareforindiahelpinghands@yahoo.com';
+let ourpassword= 'duzfeteoamccsbtc';
 
 let transporter = nodemailer.createTransport({
-    service: 'gmail',
+    host: 'smtp.mail.yahoo.com',
+    port: 465,
+    service:'yahoo',
+    secure: false,
     auth: {
       user: ouremail,
       pass: ourpassword
@@ -17,10 +20,20 @@ let transporter = nodemailer.createTransport({
 route.post('/donate_request',(req,res)=>{
     let sub= req.body.subject;
     let email= req.body.emailadd.trim();
-    var quantity = { Medicalquantityapprox: '0',  Clothesquantityapprox: '0', Booksquantityapprox: '0', FoodPacketsquantityapprox: '0', Groceriesquantityapprox: '0', quantityapprox: '0'};
+    var quantity = { 
+        Medicalquantityapprox: '0',
+        Clothesquantityapprox: '0', 
+        Booksquantityapprox: '0', 
+        FoodPacketsquantityapprox: '0', 
+        Groceriesquantityapprox: '0', 
+        quantityapprox: '0'
+    };
+
     let txt= `Name: ${req.body.name}\nMobile number: ${req.body.mobileno}\nEmail id: ${req.body.emailadd}\nAddress: ${req.body.addressin}`;
-    for(let i = 5; i < Object.keys(req.body).length; i++){
-      let quantity_name = Object.keys(req.body)[i];
+    
+    let kys = Object.keys(req.body);
+    for(let i = 5; i < kys.length; i++){
+      let quantity_name = kys[i];
       let left = quantity_name.split("quantityapprox");
       if(left[0] == "FoodPackets")
         left[0] = "Food Packets";
@@ -28,6 +41,8 @@ route.post('/donate_request',(req,res)=>{
       quantity[quantity_name] = req.body[quantity_name];
       txt += total_quantity;
     }
+
+    let kys_quantity = Object.keys(quantity);
     donations.create({
         username: req.user.dataValues.username,
         subject: req.body.subject,
@@ -35,12 +50,12 @@ route.post('/donate_request',(req,res)=>{
         email_id: req.body.emailadd,
         mobile_number: req.body.mobileno,
         address: req.body.addressin,
-        Medicalquantityapprox: quantity[Object.keys(quantity)[0]],
-        Clothesquantityapprox: quantity[Object.keys(quantity)[1]],
-        Booksquantityapprox: quantity[Object.keys(quantity)[2]],
-        FoodPacketsquantityapprox: quantity[Object.keys(quantity)[3]],
-        Groceriesquantityapprox: quantity[Object.keys(quantity)[4]],
-        quantityapprox: quantity[Object.keys(quantity)[5]],
+        Medicalquantityapprox: quantity[kys_quantity[0]],
+        Clothesquantityapprox: quantity[kys_quantity[1]],
+        Booksquantityapprox: quantity[kys_quantity[2]],
+        FoodPacketsquantityapprox: quantity[kys_quantity[3]],
+        Groceriesquantityapprox: quantity[kys_quantity[4]],
+        quantityapprox: quantity[kys_quantity[5]],
         status: 'pending'
     }).then((created_user)=>{
         if(created_user){
@@ -51,6 +66,7 @@ route.post('/donate_request',(req,res)=>{
             res.send(undefined);
         }
     }).catch((err)=>{
+        console.log(err);
         res.send(undefined);
     })
     console.log(sub);
@@ -156,9 +172,8 @@ route.post('/delete_request',(req,res)=>{
             res.redirect('back');
         })
     }
-    else{
-        res.send(undefined);
-    }
+   
+    res.send(undefined);
 })
 
 route.post('/collected_request',(req,res)=>{

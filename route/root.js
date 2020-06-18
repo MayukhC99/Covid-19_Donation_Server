@@ -94,7 +94,7 @@ route.get('/delete/profile_image',(req,res)=>{
     res.redirect('back');
 })
 
-//get profile picture
+//get whole user
 route.get('/get/user_details',(req,res)=>{
   res.send(req.user);
 })
@@ -107,10 +107,10 @@ route.get('/get/username',(req,res)=>{
 route.get('/verify_user',(req,res)=>{
     console.log('Verifying User ');
     if (req.user){
-        if(req.user.dataValues.username === 'admin'){
+        if(req.user.username === 'admin'){
             console.log('admin');
             res.send('admin');
-        } else if(req.user.dataValues.username !== undefined) {
+        } else if(req.user.username !== undefined) {
             console.log('user verified');
             res.send('success');
         } else{
@@ -118,9 +118,8 @@ route.get('/verify_user',(req,res)=>{
             res.send(undefined);
         }
     }
-    else{
+    else
         res.send(undefined);
-    }
 });
 
 module.exports= {

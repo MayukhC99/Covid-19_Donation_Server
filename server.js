@@ -3,39 +3,37 @@ const express_sessions = require('express-session');
 const passport= require('./passport').passport;
 const nodemailer= require('nodemailer');
 const path= require('path');
-const http= require('http');
+
+let port= process.env.PORT || 3000 ;
 
 const app= express();
-let port= process.env.PORT || 3000 ;
-const server= http.createServer(app);
-
-let ouremail= 'shareforindiahelpinghands@gmail.com';
-let ourpassword= 'avsharshe1234'
-
-let transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: ouremail,
-      pass: ourpassword
-    }
-});
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 app.use(express_sessions({
-  secret: 'Covid19DonationServer'
+  secret: 'secrectshouldnotbesomethingeasysothateveryonecandecodeit'
 }));
 app.use(passport.initialize());
 app.use(passport.session());
 
+
+
+let ouremail= 'shareforindiahelpinghands@yahoo.com';
+let ourpassword= 'duzfeteoamccsbtc'
+
+let transporter = nodemailer.createTransport({
+  host: 'smtp.mail.yahoo.com',
+  port: 465,
+  service:'yahoo',
+  secure: false,
+  auth: {
+      user: ouremail,
+      pass: ourpassword
+    }
+});
+
 app.use(express.static(path.join(__dirname,'public')));
-app.use('/donations',require('./route/donations').route);
-app.use('/signup',require('./route/signup').route);
-app.use('/login',require('./route/login').route);
-app.use('/root',require('./route/root').route);
-
-
 
 app.post('/contactus',(req,res)=>{
     let name= req.body.name;
@@ -76,10 +74,11 @@ app.post('/contactus',(req,res)=>{
     res.redirect('back');
 })
 
+app.use('/donations',require('./route/donations').route);
+app.use('/signup',require('./route/signup').route);
+app.use('/login',require('./route/login').route);
+app.use('/root',require('./route/root').route);
+
+app.listen(port,()=>{console.log(`Server listening at port ${port}`)});
 
 
-server.listen(port,()=>{console.log('Server listening')});
-
-module.exports= {
-  app
-}
