@@ -143,18 +143,11 @@ route.get('/get/all_donation_requests', (req,res) =>{
     }
 })
 
-route.post('/delete_request',(req,res)=>{
+route.post('/cancel_request',(req,res)=>{
     if(req.user.username && req.user.username=='admin'){
         donations.findOne({
             where: {
-                username: req.body.username,
-                Medicalquantityapprox: req.body.Medicalquantityapprox,
-                Clothesquantityapprox: req.body.Clothesquantityapprox,
-                Booksquantityapprox: req.body.Booksquantityapprox,
-                FoodPacketsquantityapprox: req.body.FoodPacketsquantityapprox,
-                Groceriesquantityapprox: req.body.Groceriesquantityapprox,
-                quantityapprox: req.body.quantityapprox,
-                status: req.body.status
+                id: req.body.id
             }
         }).then((user)=>{
 
@@ -162,8 +155,8 @@ route.post('/delete_request',(req,res)=>{
                 console.log("User doesn't exist");
                 res.redirect('back');
             }
-            user.destroy();
-            console.log('Deleted successfully');
+            user.update({status: 'canceled'});
+            console.log('Canceled successfully');
 
             res.redirect('back');
 
@@ -180,14 +173,7 @@ route.post('/collected_request',(req,res)=>{
     if(req.user.username && req.user.username=='admin'){
         donations.findOne({
             where: {
-                username: req.body.username,
-                Medicalquantityapprox: req.body.Medicalquantityapprox,
-                Clothesquantityapprox: req.body.Clothesquantityapprox,
-                Booksquantityapprox: req.body.Booksquantityapprox,
-                FoodPacketsquantityapprox: req.body.FoodPacketsquantityapprox,
-                Groceriesquantityapprox: req.body.Groceriesquantityapprox,
-                quantityapprox: req.body.quantityapprox,
-                status: req.body.status
+                id: req.body.id
             }
         }).then((user)=>{
 

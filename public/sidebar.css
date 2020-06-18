@@ -9,7 +9,7 @@
   text-decoration: none;
 }
 .side .sidebar {
-  z-index: 1001;
+  z-index: 1;
   position: fixed;
   top: 50px;
   bottom: 0;
@@ -30,6 +30,7 @@
 .side .sidebar ul {
   height: calc(100% - 60px);
   overflow-y: auto;
+  scrollbar-width: thin !important;
 }
 .side .sidebar ul::-webkit-scrollbar-track
 {
@@ -81,7 +82,7 @@
   cursor: pointer;
 }
 .side label #btnSide{
-  z-index: 1004;
+  z-index: 1;
   position: fixed;
   left: 20px;
   top: 70px;
@@ -92,7 +93,7 @@
   transition: all .5s;
 }
 .side label #cancelSide{
-  z-index: 1002;
+  z-index: 2;
   left: -220px;
   top: 70px;
   font-size: 30px;
