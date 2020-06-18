@@ -238,21 +238,6 @@ $(document).ready(function(){
         reader.readAsDataURL(file);
     }
     
-    function clearImage(e) {
-        if(e) {
-            e.preventDefault();
-        }
-    
-        var theImageTag = document.querySelector('#theImageTag');
-    
-        if(theImageTag) {
-            theImageContainer.removeChild(theImageTag);
-        }
-    
-        theErrorMessage.classList.add('hide');
-        theSuccessMessage.classList.add('hide');
-    }
-    
     $(document).on('click', '.alert .close', function(){
         $(".alert").hide();
     })
