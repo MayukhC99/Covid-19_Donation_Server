@@ -13,14 +13,7 @@ $(document).ready(function(){
             for(let i = 0; i < size; i++){
                 js.i = obj;
                 var ob = {
-                    "username": data[i].username,
-                    "Medicalquantityapprox": data[i].Medicalquantityapprox,
-                    "Clothesquantityapprox": data[i].Clothesquantityapprox,
-                    "Booksquantityapprox": data[i].Booksquantityapprox,
-                    "FoodPacketsquantityapprox": data[i].FoodPacketsquantityapprox,
-                    "Groceriesquantityapprox": data[i].Groceriesquantityapprox,
-                    "quantityapprox": data[i].quantityapprox,
-                    "status": data[i].status
+                    id: data[i].id
                 }
                 js.i.push(ob);
                 if(data[i].subject !== "Multiple Donation"){
@@ -32,7 +25,7 @@ $(document).ready(function(){
                             Address : ${data[i].address} 
                         </div>
                         <button class="btn btn-primary collected_request collected${i+1} mt-2 ml-2 mb-2">Collected</button>
-                        <button class="btn btn-danger delete_request delete${i+1} mt-2 ml-2 mb-2">Delete</button>
+                        <button class="btn btn-danger cancel_request delete${i+1} mt-2 ml-2 mb-2">Cancel</button>
                     </div>`;
                 }
                 else{
@@ -55,7 +48,7 @@ $(document).ready(function(){
                             Address : ${data[i].address} 
                         </div>
                         <button class="btn btn-primary collected_request collected${i+1} mt-2 ml-2 mb-2">Collected</button>
-                        <button class="btn btn-danger delete_request delete${i+1} mt-2 ml-2 mb-2">Delete</button>
+                        <button class="btn btn-danger cancel_request delete${i+1} mt-2 ml-2 mb-2">Cancel</button>
                     </div>`;
                 }
             }
@@ -81,14 +74,7 @@ $(document).ready(function(){
                 url: `/donations/${type}`,
                 type: 'POST',
                 data: {
-                    username: request_data.username,
-                    Medicalquantityapprox: request_data.Medicalquantityapprox,
-                    Clothesquantityapprox: request_data.Clothesquantityapprox,
-                    Booksquantityapprox: request_data.Booksquantityapprox,
-                    FoodPacketsquantityapprox: request_data.FoodPacketsquantityapprox,
-                    Groceriesquantityapprox: request_data.Groceriesquantityapprox,
-                    quantityapprox: request_data.quantityapprox,
-                    status: request_data.status
+                    id: request_data.id
                 },
                 success: function (data) {
                     setTimeout(location.reload.bind(location), 500);

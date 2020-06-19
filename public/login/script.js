@@ -2,7 +2,6 @@
 $(function(){
     
     $("#login_btn").click(function(){
-        console.log("Login button clicked")
         let user_text= $('#username');
         let user_password= $('#password')
 
@@ -13,7 +12,6 @@ $(function(){
             //alert('post request is being made');
             $("#login_btn").prop('disabled', true);
             $("#login_btn").addClass("back");
-            console.log($("#login_btn").attr('class'));
             $.post('/login/getin',{
                 username: username,
                 password: password

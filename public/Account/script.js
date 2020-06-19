@@ -1,15 +1,8 @@
 $(document).ready(function(){
 
-    var theImageForm = document.querySelector('#theImageForm');
     var theImageField = document.querySelector('#theImageField');
-    var theImageContainer = document.querySelector('#theImageContainer');
-    var theErrorMessage = document.querySelector('#errorMessage');
-    var theSuccessMessage = document.querySelector('#successMessage');
-    //var theClearImageLink = document.querySelector('#clearImage');
     var theOpenButton = document.querySelector('#buttonContainer');
-    let name = $('#my_name');
     let image = $('#user');
-    let theClearImageLink = $('#clearImage');
     window.total = 0;
 
     //to get profile_picture of user
@@ -25,10 +18,11 @@ $(document).ready(function(){
         $("#lastName").addClass('back');
         $("#MobileNumber").addClass('back');
         $("#EmailId").addClass('back');
+        if(data.address !== null)
+            $("#Address").addClass('back');
     })
 
     $.get('/donations/all_donations', (data) =>{
-        console.log(data);
         if(data === undefined || data.length == 0){
             $(".error_msg").show();
         }
@@ -49,8 +43,11 @@ $(document).ready(function(){
                             COLLECTED
                         </div>`;
                     }
-                    else{
+                    else if(data[i].status === "collected"){
                         status_str += `<div class="text-center mt-3 pb-3 s s${t}" style="border-bottom: solid 1px #e0d6d6;">COLLECTED</div>`;
+                    }
+                    else{
+                        status_str += `<div class="text-center mt-3 pb-3 s s${t}" style="border-bottom: solid 1px #e0d6d6;">CANCELED</div>`;
                     }
                 }
                 else{
@@ -65,8 +62,11 @@ $(document).ready(function(){
                                 COLLECTED
                             </div>`;
                         }
-                        else{
+                        else if(data[i].status === "collected"){
                             status_str += `<div class="text-center mt-3 pb-3 s s${t}" style="border-bottom: solid 1px #e0d6d6;">COLLECTED</div>`;
+                        }
+                        else{
+                            status_str += `<div class="text-center mt-3 pb-3 s s${t}" style="border-bottom: solid 1px #e0d6d6;">CANCELED</div>`;
                         }
                     }
                     if(data[i].Clothesquantityapprox !== '0'){
@@ -80,8 +80,11 @@ $(document).ready(function(){
                                 COLLECTED
                             </div>`;
                         }
-                        else{
+                        else if(data[i].status === "collected"){
                             status_str += `<div class="text-center mt-3 pb-3 s s${t}" style="border-bottom: solid 1px #e0d6d6;">COLLECTED</div>`;
+                        }
+                        else{
+                            status_str += `<div class="text-center mt-3 pb-3 s s${t}" style="border-bottom: solid 1px #e0d6d6;">CANCELED</div>`;
                         }
                     }
                     if(data[i].Booksquantityapprox !== '0'){
@@ -95,8 +98,11 @@ $(document).ready(function(){
                                 COLLECTED
                             </div>`;
                         }
-                        else{
+                        else if(data[i].status === "collected"){
                             status_str += `<div class="text-center mt-3 pb-3 s s${t}" style="border-bottom: solid 1px #e0d6d6;">COLLECTED</div>`;
+                        }
+                        else{
+                            status_str += `<div class="text-center mt-3 pb-3 s s${t}" style="border-bottom: solid 1px #e0d6d6;">CANCELED</div>`;
                         }
                     }
                     if(data[i].FoodPacketsquantityapprox !== '0'){
@@ -110,8 +116,11 @@ $(document).ready(function(){
                                 COLLECTED
                             </div>`;
                         }
-                        else{
+                        else if(data[i].status === "collected"){
                             status_str += `<div class="text-center mt-3 pb-3 s s${t}" style="border-bottom: solid 1px #e0d6d6;">COLLECTED</div>`;
+                        }
+                        else{
+                            status_str += `<div class="text-center mt-3 pb-3 s s${t}" style="border-bottom: solid 1px #e0d6d6;">CANCELED</div>`;
                         }
                     }
                     if(data[i].Groceriesquantityapprox !== '0'){
@@ -125,8 +134,11 @@ $(document).ready(function(){
                                 COLLECTED
                             </div>`;
                         }
-                        else{
+                        else if(data[i].status === "collected"){
                             status_str += `<div class="text-center mt-3 pb-3 s s${t}" style="border-bottom: solid 1px #e0d6d6;">COLLECTED</div>`;
+                        }
+                        else{
+                            status_str += `<div class="text-center mt-3 pb-3 s s${t}" style="border-bottom: solid 1px #e0d6d6;">CANCELED</div>`;
                         }
                     }
                 }
@@ -141,7 +153,7 @@ $(document).ready(function(){
 
     //to clear current profile_picture of user
     $('#clearImage, #theclearImage').click(function(){
-        var message = confirm("Are you sure you want to reset your current photo?");
+        var message = confirm("Are you sure you want to remove your current photo?");
         if(message == true){
             $.get('/root/delete/profile_image',(data)=>{
                 location.reload();
@@ -188,11 +200,11 @@ $(document).ready(function(){
         }
     })
 
-    $("#firstName, #lastName, #MobileNumber, #EmailId").mouseup(function(){
+    $("#firstName, #lastName, #MobileNumber, #EmailId, #Address").mouseup(function(){
         $(this).removeClass('back');
     })
 
-    $("#firstName, #lastName, #MobileNumber, #EmailId").on('blur', function(){
+    $("#firstName, #lastName, #MobileNumber, #EmailId, #Address").on('blur', function(){
         $(this).addClass('back');
     })
 
@@ -252,7 +264,6 @@ $(document).ready(function(){
                 },
     
                 success: function(res) {
-                    console.log(res);
                     if(res !== "undefined" && res !== ""){
                         $('#errorMessage').hide();
                         $('#successMessage').hide();
@@ -279,6 +290,7 @@ $(document).ready(function(){
                 },
 
                 success: function(res) {
+                    $("#Address").addClass('back');
                     $('#successMessage').html(`${res}<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>`);
                     $('#successMessage').show();
                 }

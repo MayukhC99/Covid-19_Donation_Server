@@ -32,7 +32,7 @@ html, body{
     width: 60%;
     margin-left: 26%;
     margin-top: -2%;
-    box-shadow: 0px 2px 10px 5px rgba(202, 199, 201, 0.5);
+    box-shadow: 0px 2px 15px 5px rgba(202, 199, 201, 0.5);
     border-radius: 5px;
     /* transform: translate(60%, -10%); */
 }
@@ -169,6 +169,9 @@ html, body{
         margin-top: -6%;
         width: 100%;
     }
+    #profile_text{
+        left: -10%;
+    }
     #edit{
         font-size: small;
     }
@@ -191,6 +194,9 @@ html, body{
         margin-left: -3%;
         margin-top: -10%;
     }
+    #profile_text{
+        font-size: 14px;
+    }
     #buttonContainer label, #buttonContainer button{
         height: 25px;
     }
@@ -208,6 +214,10 @@ html, body{
     }
     .row #errorMessage, .row #successMessage{
         left: 2%;
+    }
+    #profile_text{
+        left: -20%;
+        font-size: 12px;
     }
 }
 
