@@ -1,4 +1,6 @@
 $(function(){
+    $('#preloader').delay(350).fadeOut('slow');
+    
     // let typed_name= $('#name');
     let typed_username= $('#username');
     let typed_first_name= $('#first_name');

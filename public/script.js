@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    $('#preloader').delay(350).fadeOut('slow');
 
     navbar_obj={
         trigger_carousel: $('.navbar-nav li:first-child a'),

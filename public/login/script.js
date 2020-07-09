@@ -1,5 +1,6 @@
 
 $(function(){
+    $('#preloader').delay(350).fadeOut('slow');
     
     $("#login_btn").click(function(){
         let user_text= $('#username');
