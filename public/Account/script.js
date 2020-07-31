@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    $('#preloader').delay(350).fadeOut('slow');
 
     var theImageField = document.querySelector('#theImageField');
     var theOpenButton = document.querySelector('#buttonContainer');
