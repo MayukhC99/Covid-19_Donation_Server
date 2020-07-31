@@ -171,3 +171,5 @@ Project Link: [https://github.com/MayukhC99/Covid-19_Donation_Server](https://gi
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/othneildrew
 [product-screenshot]: images/screenshot.png
+
+#### Note: The server is temporarily down, so the above link might not work.
