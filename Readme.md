@@ -12,7 +12,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/MayukhC99/Covid-19_Donation_Server">
-    <img src="public/img/screencapture-helping-hand-covid19-herokuapp-2020-07-31-23_29_59.png" alt="Picture" width="1000" height="500">
+    <img src="public/Img/screencapture-helping-hand-covid19-herokuapp-2020-07-31-23_29_59.png" alt="Picture" width="1000" height="2000">
   </a>
 
   <h3 align="center">Covid-19_Donation_Server</h3>
