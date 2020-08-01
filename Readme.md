@@ -1,7 +1,8 @@
 ## COVID-19 Donation Server
 
-## [Click Me](https://helping-hand-covid19.herokuapp.com/)
-
+## [Click Me](https://helping-hand-covid19.herokuapp.com/) 
+<span><p>(Note: The database is temporarily down, the server is no longer accepting donations. For further info contact us via Email Id given below)</p></span>
+<br>
 
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
@@ -52,15 +53,11 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This is your personal E-Wallet combined with Social Networking facilities. Here you can manage your bank account and your personal E-Wallet, send friend requests, build connections, chat with them and can even have video conferencing. It's an amazing way to stay connected and send money whenever required. Enlinea provides you with many other facilities and even a live support. Banking has never been so fun before.
+In these difficult times we are trying to feed some poor people and give them emergency aid. We need help in this endeavor, so if anyone is willing to help, they can. You can now make your donation reach to the needy peoples through us. This Website provides a way for you to donate. You can create and manage your account, track your donation, and get endorsed for each donation you make.
 
 Major facilities:
-* Managing your Enlinea bank account and E-Wallet, transfer money, gift money to your near ones.
-* Social media features, stay connected with friends, video calling, chatting and lots more.
-
-We give top priority to our users security. Our web application is secure to any kind of money transaction.
-
-A list of commonly used resources that I find helpful are listed in the acknowledgements.
+* Donate food, emergency aid to the needy peoples.
+* Managing your account and track your donations.
 
 ### Built With
 Some major frameworks/library used in this project:-
@@ -144,8 +141,6 @@ Project Link: [https://github.com/MayukhC99/Covid-19_Donation_Server](https://gi
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 * [GitHub Pages](https://pages.github.com)
-* [Animate.css](https://daneden.github.io/animate.css)
-* [Loaders.css](https://connoratherton.com/loaders)
 * [Slick Carousel](https://kenwheeler.github.io/slick)
 * [Smooth Scroll](https://github.com/cferdinandi/smooth-scroll)
 * [Sticky Kit](http://leafo.net/sticky-kit)
@@ -172,4 +167,4 @@ Project Link: [https://github.com/MayukhC99/Covid-19_Donation_Server](https://gi
 [linkedin-url]: https://linkedin.com/in/othneildrew
 [product-screenshot]: images/screenshot.png
 
-#### Note: The server is temporarily down, so the above link might not work.
+#### Note: The database is temporarily down. The server is no longer accepting donations.
